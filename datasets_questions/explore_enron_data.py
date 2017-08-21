@@ -56,8 +56,25 @@ print count
 
 
 payments_zero = len(dict((key,val) for key,val in enron_data.items() if val['total_payments'] == 'NaN'))
-percentage = (float) (payments_zero) / len(enron_data) * 100
+percentage = float(payments_zero) / len(enron_data) * 100
 print percentage
+poi = dict((key,value) for key, value in enron_data.items() if(value['poi'] == True))
+poi_num = len(poi)
+payments_zero_poi = len(dict((key,value) for key, value in poi.items() if value['total_payments'] == 'NaN'))
+print float( payments_zero_poi) / poi_num
+
+print 10 + len(enron_data)
+print 10 + len(dict((key, value) for key, value in enron_data.items() if value['total_payments'] == 'NaN'))
+
+poi = dict((key,value) for key, value in enron_data.items() if value['poi'] == True)
+print 10 + len(poi)
+poi_no_payments =  10 + len(dict((key, value) for key, value in poi.items() if value['total_payments'] == 'NaN'))
+print float(poi_no_payments) / ( 10 + len(poi))
+
+
+
+ 
+
 
 
 
